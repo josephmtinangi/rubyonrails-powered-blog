@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Manage Posts <a href="new.html" class="btn btn-success">Add new</a></h1>
+  <h1>Manage Posts <%= link_to 'New', new_admin_post_path, class: 'btn btn-success pull-right' %></h1>
 </div>
 <div class="table-responsive">
   <table class="table table-hover">
@@ -7,34 +7,24 @@
     <tr>
       <th>Title</th>
       <th>Category</th>
+      <th>Created</th>
+      <th>Updated</th>
       <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Post one</td>
-      <td>Programming</td>
-      <td>
-        <a href="#" class="btn btn-primary">Edit</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Post two</td>
-      <td>Database</td>
-      <td>
-        <a href="#" class="btn btn-primary">Edit</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Post three</td>
-      <td>Networking</td>
-      <td>
-        <a href="#" class="btn btn-primary">Edit</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-      </td>
-    </tr>
+    <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.category.name %></td>
+          <td><%= post.created_at %></td>
+          <td><%= post.updated_at %></td>
+          <td>
+            <%= link_to 'Edit', edit_admin_post_path(post), class: 'btn btn-primary' %>
+            <%= link_to 'Delete', admin_post_path(post), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+          </td>
+        </tr>
+    <% end %>
     </tbody>
   </table>
 </div>

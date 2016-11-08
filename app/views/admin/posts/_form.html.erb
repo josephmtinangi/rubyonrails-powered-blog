@@ -1,0 +1,38 @@
+<!--Check for errors-->
+<% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+        <!--Show them-->
+        <div class="alert alert-danger">
+          <%= msg %>
+        </div>
+    <% end %>
+<% end %>
+
+<div class="form-group">
+  <%= f.input :title, input_html: {class: 'form-control'} %>
+</div>
+
+<div class="form-group">
+  <%= f.label :category %>
+  <%= f.select :category_id, Category.all.collect { |x| [x.name, x.id] }, {:include_blank => 'Select One'}, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :author %>
+  <%= f.select :user_id, User.all.collect { |x| [x.name, x.id] }, {:include_blank => 'Select One'}, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+</div>
+
+<div class="form-group">
+  <%= f.label :tags %>
+  <%= f.text_area :tags, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= f.label :body %>
+  <%= f.text_area :body, class: 'form-control', rows: '15' %>
+</div>

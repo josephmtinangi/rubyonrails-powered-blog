@@ -1,2 +1,10 @@
-<h1>Admin::Posts#new</h1>
-<p>Find me in app/views/admin/posts/new.html.erb</p>
+<h2>Add new post</h2>
+<%= simple_form_for [:admin, @post] do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <%= f.button :submit, class: 'btn btn-primary' %>
+
+    <%= link_to 'Cancel', admin_posts_path, class: 'btn btn-default' %>
+
+<% end %>
