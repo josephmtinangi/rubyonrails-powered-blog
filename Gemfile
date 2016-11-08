@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'autoprefixer-rails', '~> 6.5', '>= 6.5.2'
-gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
+gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5', :require => "bcrypt"
 gem 'mail_form', '~> 1.6'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 
