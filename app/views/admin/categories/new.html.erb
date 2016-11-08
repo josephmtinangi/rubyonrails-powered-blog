@@ -1,18 +1,7 @@
 <h2>Add new category</h2>
 <%= simple_form_for [:admin, @category] do |f| %>
-    <!--Check for errors-->
-    <% if @category.errors.any? %>
-        <% @category.errors.full_messages.each do |msg| %>
-            <!--Show them-->
-            <div class="alert alert-danger">
-              <%= msg %>
-            </div>
-        <% end %>
-    <% end %>
 
-    <div class="form-group">
-      <%= f.input :name, input_html: {class: 'form-control'} %>
-    </div>
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
 
     <%= f.button :submit, class: 'btn btn-primary' %>
 
