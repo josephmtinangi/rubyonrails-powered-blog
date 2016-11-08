@@ -3,9 +3,6 @@ class Admin::CategoriesController < Admin::ApplicationController
     @categories = Category.all
   end
 
-  def show
-  end
-
   def new
     @page_title = 'Add Category'
     @category = Category.new
