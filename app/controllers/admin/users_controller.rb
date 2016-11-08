@@ -21,13 +21,28 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
-  def delete
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:notice] = 'User updated'
+      redirect_to admin_users_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = 'User deleted'
+    redirect_to admin_users_path
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password_hash, :password_salt)
+    params.require(:user).permit(:name, :email, :password)
   end
 end

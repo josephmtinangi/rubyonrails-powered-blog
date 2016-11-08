@@ -1,2 +1,10 @@
-<h1>Admin::Users#edit</h1>
-<p>Find me in app/views/admin/users/edit.html.erb</p>
+<h2>Add new user</h2>
+<%= simple_form_for [:admin, @user] do |f| %>
+
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+    <%= f.button :submit, class: 'btn btn-primary' %>
+
+    <%= link_to 'Cancel', admin_users_path, class: 'btn btn-default' %>
+
+<% end %>
