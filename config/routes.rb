@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'comments/delete'
+  end
+
   get 'comments/new'
 
   namespace :admin do
