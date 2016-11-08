@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
+
+  get 'about/index'
+
   namespace :admin do
     get 'sessions/new'
   end
