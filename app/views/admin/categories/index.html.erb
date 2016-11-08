@@ -1,2 +1,28 @@
-<h1>Admin::Categories#index</h1>
-<p>Find me in app/views/admin/categories/index.html.erb</p>
+<div class="page-header">
+  <h1>Manage Categories <%= link_to 'Create New', new_admin_category_path, class: 'btn btn-primary pull-right' %></h1>
+</div>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Created</th>
+      <th>Updated</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td><%= category.created_at %></td>
+          <td><%= category.updated_at %></td>
+          <td>
+            <%= link_to 'Edit', edit_admin_category_path(category), class: 'btn btn-primary' %>
+            <%= link_to 'Delete', admin_category_path(category), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
