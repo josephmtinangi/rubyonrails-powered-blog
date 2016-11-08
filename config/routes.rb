@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/new'
+
   namespace :admin do
     get 'categories/index'
   end
