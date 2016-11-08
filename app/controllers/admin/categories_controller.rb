@@ -7,12 +7,28 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def new
+    @page_title = 'Add Category'
     @category = Category.new
+  end
+
+  def create
+    @category = Category.new(category_params)
+    if @category.save
+      flash[:notice] = 'Category added successfully'
+      redirect_to admin_categories_path
+    else
+      render 'new'
+    end
   end
 
   def edit
   end
 
   def delete
+  end
+
+  private
+  def category_params
+    params.require(:category).permit(:name)
   end
 end
