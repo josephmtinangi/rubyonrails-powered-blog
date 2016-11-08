@@ -72,20 +72,13 @@
         <%= yield %>
       </div>
       <div class="col-sm-4">
-        <div class="list-group">
-          <a href="#" class="list-group-item active">Item 1</a>
-          <a href="#" class="list-group-item">Item 2</a>
-          <a href="#" class="list-group-item">Item 3</a>
-        </div>
+        <%= render 'partials/sidebar' %>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>
-    Copyright &copy;2016, rBlog | <a href="login.html">Admin Login</a>
-  </p>
-</footer>
+<%= render 'partials/footer' %>
+
 </body>
 </html>
