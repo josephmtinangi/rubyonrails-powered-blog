@@ -35,6 +35,7 @@ gem 'autoprefixer-rails', '~> 6.5', '>= 6.5.2'
 gem 'bcrypt-ruby', '3.1.5'
 gem 'mail_form', '~> 1.6'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
