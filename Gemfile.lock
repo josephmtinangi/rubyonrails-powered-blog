@@ -63,6 +63,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
+    font-awesome-rails (4.7.0.0)
+      railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -164,6 +166,9 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     will_paginate (3.1.5)
+    wysiwyg-rails (2.3.5)
+      font-awesome-rails (~> 4.4, >= 4.4.0.0)
+      railties (>= 3.2, < 6.0)
 
 PLATFORMS
   x64-mingw32
@@ -174,6 +179,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3, >= 3.3.7)
   byebug
   coffee-rails (~> 4.2)
+  font-awesome-rails (~> 4.7)
   jbuilder (~> 2.5)
   jquery-rails
   mail_form (~> 1.6)
@@ -188,6 +194,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console
   will_paginate (~> 3.1, >= 3.1.5)
+  wysiwyg-rails (~> 2.3, >= 2.3.5)
 
 BUNDLED WITH
    1.13.6
