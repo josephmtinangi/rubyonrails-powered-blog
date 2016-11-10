@@ -1,3 +1,9 @@
+<!-- Initialize the editor. -->
+<script>
+  $(function() {
+    $('#edit').froalaEditor()
+  });
+</script>
 <!--Check for errors-->
 <% if @post.errors.any? %>
     <% @post.errors.full_messages.each do |msg| %>
@@ -37,5 +43,5 @@
 
 <div class="form-group">
   <%= f.label :body %>
-  <%= f.text_area :body, class: 'form-control', rows: '15' %>
+  <%= f.text_area :body, class: 'form-control', rows: '15', id: 'edit' %>
 </div>
