@@ -6,3 +6,5 @@
   <%= image_tag @post.image.url, class: 'img-responsive' %>
   <%= raw @post.body %>
 </div>
+
+<%= render 'partials/comments' %>
