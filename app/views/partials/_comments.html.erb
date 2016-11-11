@@ -1,18 +1,15 @@
 <div class="comments">
-  <h2 class="page-header"><%= @post.comments.length %> comments</h2>
+  <h2 class="page-header"><%= @post.comments.length %> comment(s)</h2>
   <% @post.comments.each do |comment| %>
       <div class="comment">
         <div class="row">
-          <div class="col-md-2">
-
-          </div>
-          <div class="col-md-10">
+          <div class="col-md-12">
             <div class="well">
               <h4>
                 <%= comment.name %>
                 <small><%= comment.created_at.to_time.strftime('%B %e at %l:%M %p') %></small>
               </h4>
-              <%= comment.body %>
+              <blockquote><%= comment.body %></blockquote>
             </div>
           </div>
         </div>
